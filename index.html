@@ -8,14 +8,12 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
         body { background-color: #fcfbfa; color: #2d3748; line-height: 1.6; }
         
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
         /* Главный экран */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; background: radial-gradient(circle at top right, #f3f4ed 0%, #fcfbfa 60%); }
-        .container { max-width: 650px; width: 100%; text-align: center; }
-        
-        /* Надзаголовок */
+        .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; padding: 60px 0; background: radial-gradient(circle at top right, #f3f4ed 0%, #fcfbfa 60%); text-align: center; }
+        .hero-content { max-width: 650px; margin: 0 auto; }
         .badge { display: inline-block; background-color: #e2e8f0; color: #4a5568; padding: 6px 16px; border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
-        
-        /* Заголовок и подзаголовок */
         h1 { font-size: 42px; line-height: 1.2; color: #1a202c; margin-bottom: 20px; font-weight: 700; }
         h1 span { color: #2f5d47; }
         p.subtitle { font-size: 18px; color: #718096; margin-bottom: 40px; }
@@ -25,28 +23,84 @@
         .btn:hover { background-color: #234735; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(47, 93, 71, 0.35); }
         .btn svg { width: 20px; height: 20px; fill: currentColor; }
         
-        /* Адаптивность для телефонов */
-        @media (max-width: 480px) {
+        /* Секции общие */
+        section.problems { padding: 80px 0; background-color: #f7f6f2; }
+        .section-title { text-align: center; font-size: 32px; color: #1a202c; margin-bottom: 16px; font-weight: 700; }
+        .section-subtitle { text-align: center; color: #718096; max-width: 600px; margin: 0 auto 50px; font-size: 16px; }
+        
+        /* Сетка карточек */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: #ffffff; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); }
+        .card-icon { font-size: 32px; margin-bottom: 16px; display: inline-block; }
+        .card h3 { font-size: 20px; color: #1a202c; margin-bottom: 12px; }
+        .card p { color: #4a5568; font-size: 15px; }
+
+        /* Блок метода */
+        section.method { padding: 80px 0; background-color: #ffffff; text-align: center; }
+        .method-box { max-width: 800px; margin: 0 auto; background-color: #fcfbfa; border: 2px dashed #2f5d47; padding: 40px; border-radius: 20px; }
+        .method-box h3 { font-size: 24px; color: #2f5d47; margin-bottom: 16px; }
+        .method-box p { font-size: 16px; color: #4a5568; margin-bottom: 24px; }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
             h1 { font-size: 32px; }
-            p.subtitle { font-size: 16px; }
-            .btn { width: 100%; }
+            .section-title { font-size: 26px; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero">
         <div class="container">
-            <div class="badge">Индивидуальный формат онлайн</div>
-            <h1>Свобода и легкость вашего <span>тела через экран</span></h1>
-            <p class="subtitle">Персональная онлайн-система тренировок и оздоровления. Избавляемся от зажимов, восстанавливаем баланс и возвращаем энергию без изнуряющих нагрузок.</p>
+            <div class="hero-content">
+                <div class="badge">Индивидуальный формат онлайн</div>
+                <h1>Свобода и легкость вашего <span>тела через экран</span></h1>
+                <p class="subtitle">Персональная онлайн-система оздоровления. Избавляемся от зажимов, восстанавливаем баланс и возвращаем энергию без изнуряющих нагрузок.</p>
+                <a href="https://t.me" class="btn" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.78 4.85-1.79.11 0 .35.03.5.16.13.12.17.28.19.39.02.07.03.22.02.39z"/></svg>
+                    Записаться на разбор тела
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК ПРОБЛЕМ -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title">Знакомо ли вам это?</h2>
+            <p class="section-subtitle">Обычно классические тренировки или массаж дают лишь временный эффект, потому что они работают с симптомом, а не с причиной.</p>
             
-            <a href="https://t.me" class="btn" target="_blank">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.78 4.85-1.79.11 0 .35.03.5.16.13.12.17.28.19.39.02.07.03.22.02.39z"/>
-                </svg>
-                Записаться на разбор тела
-            </a>
+            <div class="grid">
+                <div class="card">
+                    <span class="card-icon">⚡</span>
+                    <h3>Хроническое напряжение</h3>
+                    <p>Шея и плечи «каменные» после рабочего дня за компьютером, а легкая разминка не помогает убрать скованность.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🦶</span>
+                    <h3>Скрытые компенсации</h3>
+                    <p>Вы лечите поясницу или колени, но боль возвращается, так как реальная причина кроется в нарушении опоры стоп или наклоне таза.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🪫</span>
+                    <h3>Постоянная усталость</h3>
+                    <p>Тело ощущается «тяжелым» и непластичным, не хватает базовой жизненной энергии даже после полноценного сна.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК МЕТОДА -->
+    <section class="method">
+        <div class="container">
+            <div class="method-box">
+                <h3>Решение: Перепрограммирование миофасциальных поездов</h3>
+                <p>Мы не тренируем мышцы изолированно. Мой подход основан на работе с целостными анатомическими поездами (линиями движения). Через специальные двигательные тесты онлайн мы находим слабое звено в цепи, снимаем фасциальное напряжение и выстраиваем правильные паттерны движения. Тело само возвращается в баланс.</p>
+                <a href="https://t.me" class="btn" target="_blank">Хочу пройти диагностику</a>
+            </div>
         </div>
     </section>
 
