@@ -7,19 +7,26 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
         body { background-color: #fcfbfa; color: #2d3748; line-height: 1.6; padding: 40px 20px; }
-        .container { max-width: 700px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        h1 { font-size: 28px; color: #1a202c; margin-bottom: 12px; text-align: center; }
-        p.desc { color: #718096; text-align: center; margin-bottom: 30px; }
+        .container { max-width: 750px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        h1 { font-size: 28px; color: #1a202c; margin-bottom: 24px; text-align: center; }
         
+        /* Инструкция перед видео */
+        .instruction-top { background-color: #f7f6f2; padding: 24px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #2f5d47; }
+        .instruction-top h3 { color: #2f5d47; margin-bottom: 12px; font-size: 18px; }
+        .instruction-top ul { padding-left: 20px; color: #4a5568; font-size: 15px; margin-bottom: 16px; }
+        .instruction-top li { margin-bottom: 6px; }
+        
+        /* Предупреждение */
+        .warning-box { background-color: #fff5f5; border: 1px solid #fed7d7; color: #c53030; padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-top: 12px; }
+        .warning-box strong { color: #9b2c2c; }
+
         /* Видеоконтейнер YouTube */
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 30px; border: 1px solid #e2e8f0; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         
-        /* Инструкция по загрузке */
-        .instruction-box { background-color: #f7f6f2; padding: 24px; border-radius: 12px; margin-bottom: 30px; border-left: 4px solid #2f5d47; }
-        .instruction-box h3 { color: #2f5d47; margin-bottom: 8px; font-size: 18px; }
-        .instruction-box ol { padding-left: 20px; color: #4a5568; font-size: 15px; }
-        .instruction-box li { margin-bottom: 8px; }
+        /* Блок загрузки видео пользователем */
+        .upload-section { background-color: #f8fafc; border: 2px dashed #cbd5e1; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+        .upload-section p { font-size: 16px; color: #4a5568; margin-bottom: 16px; font-weight: 500; }
 
         /* Кнопка */
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #2f5d47; color: #ffffff; padding: 16px 32px; border-radius: 12px; font-size: 16px; font-weight: bold; text-decoration: none; transition: all 0.2s; width: 100%; box-shadow: 0 4px 14px rgba(47, 93, 71, 0.25); }
@@ -31,29 +38,34 @@
 
     <div class="container">
         <h1>Онлайн-диагностика вашего тела</h1>
-        <p class="desc">Пожалуйста, посмотрите короткую видеоинструкцию и выполните простые шаги ниже, чтобы я смог провести разбор.</p>
         
-        <!-- ВИДЕО С ЮТУБА (Замените ЗАПИСЬ_ПОСЛЕ_v= на ID вашего видео) -->
+        <!-- ИНСТРУКЦИЯ ПЕРЕД ВИДЕО -->
+        <div class="instruction-top">
+            <h3>📝 Правила подготовки к практике Ананда Мандала:</h3>
+            <ul>
+                <li><strong>Поза:</strong> Сядьте в удобное медитативное положение (сукхасана, ваджрасана или сиддхасана). Если сидеть на полу тяжело, можно использовать стул. Главное — на протяжении всей практики сохранять позвоночник абсолютно прямым.</li>
+                <li><strong>Дыхание:</strong> Дышите строго через нос. На счет «один» делайте глубокий вдох, на счет «два» — быстрый и мощный выдох. В конце каждого цикла дыхания полностью выдыхайте воздух.</li>
+                <li><strong>Формат записи:</strong> Установите телефон так, чтобы ваше тело во время выполнения практики было полностью видно в кадре во весь рост. Запишите процесс (до 30 минут).</li>
+            </ul>
+            
+            <div class="warning-box">
+                ⚠️ <strong>Важное медицинское предупреждение:</strong> Беременным женщинам, а также людям с сердечно-сосудистыми заболеваниями данная практика строго противопоказана. Если вы страдаете астмой или другими болезнями дыхательных путей — прекратите выполнение при малейшем дискомфорте.
+            </div>
+        </div>
+        
+        <!-- ВИДЕО С ЮТУБА -->
         <div class="video-container">
             <iframe src="https://youtube.com" allowfullscreen></iframe>
         </div>
         
-        <!-- ИНСТРУКЦИЯ И ОТПРАВКА -->
-        <div class="instruction-box">
-            <h3>Как записать и отправить видео для разбора (до 30 мин):</h3>
-            <ol>
-                <li>Поставьте камеру телефона так, чтобы ваше тело было видно во весь рост.</li>
-                <li>Запишите двигательные тесты из видео-инструкции выше.</li>
-                <li>Загрузите получившееся видео на любой удобный диск (Яндекс.Диск, Google Диск или Облако Mail.ru).</li>
-                <li>Скопируйте ссылку на файл, нажмите на кнопку ниже и **отправьте эту ссылку мне в Telegram**.</li>
-            </ol>
+        <!-- ЗАГРУЗКА И ОТПРАВКА -->
+        <div class="upload-section">
+            <p>Загрузите ваше записанное видео на любой диск (Яндекс, Google, Mail) или в Telegram, скопируйте ссылку на него и нажмите кнопку ниже:</p>
+            <a href="https://t.me" class="btn" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.78 4.85-1.79.11 0 .35.03.5.16.13.12.17.28.19.39.02.07.03.22.02.39z"/></svg>
+                Отправить ссылку на видео в Telegram
+            </a>
         </div>
-        
-        <!-- КНОПКА В ТЕЛЕГРАМ -->
-        <a href="https://t.me" class="btn" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.78 4.85-1.79.11 0 .35.03.5.16.13.12.17.28.19.39.02.07.03.22.02.39z"/></svg>
-            Отправить ссылку на видео в Telegram
-        </a>
     </div>
 
 </body>
